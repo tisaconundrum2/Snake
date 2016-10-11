@@ -48,6 +48,23 @@
         android:textSize="25sp"
         />
 
+    <!--<ImageView-->
+        <!--android:id="@+id/classic"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/settings"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:src="@mipmap/menu_options"-->
+        <!--/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/no_walls"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/settings"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:src="@mipmap/menu_options"-->
+        <!--/>-->
 
 
 </RelativeLayout>
