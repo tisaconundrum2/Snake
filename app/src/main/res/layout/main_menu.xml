@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="14dp"
         android:layout_marginTop="72dp"
-        android:layout_toLeftOf="@id/snake_middle"
+        android:layout_toLeftOf="@+id/snake_middle"
         android:text="@string/title_snake_left"
         android:textSize="25sp" />
 
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/snake_middle"
-        android:layout_alignBottom="@id/snake_middle"
+        android:layout_alignBottom="@+id/snake_middle"
         android:layout_marginLeft="14dp"
         android:layout_toRightOf="@id/snake_middle"
         android:text="@string/title_snake_right"
