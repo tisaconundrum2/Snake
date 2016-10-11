@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/settings"
         android:layout_centerVertical="true"
-        android:src="@mipmap/menu_options" />
+        android:src="@mipmap/settings" />
 
     <ImageView
         android:id="@+id/no_walls"
@@ -58,7 +58,7 @@
         android:layout_above="@+id/gamecenter"
         android:layout_alignLeft="@id/snake_middle"
         android:layout_marginLeft="46dp"
-        android:src="@mipmap/menu_options" />
+        android:src="@mipmap/gamecenter" />
 
     <ImageView
         android:id="@+id/settings"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/classic"
         android:layout_toLeftOf="@id/gamecenter"
-        android:src="@mipmap/menu_options" />
+        android:src="@mipmap/classic" />
 
     <ImageView
         android:id="@+id/gamecenter"
@@ -74,6 +74,6 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/no_walls"
         android:layout_alignTop="@id/settings"
-        android:src="@mipmap/menu_options" />
+        android:src="@mipmap/no_walls" />
 
 </RelativeLayout>
