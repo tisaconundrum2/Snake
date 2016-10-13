@@ -1,4 +1,4 @@
-package com.tisaconundrum.snake;
+package com.timbuchalka.snake;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +15,12 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.tisaconundrum.snake.GameSettings;
-import com.tisaconundrum.snake.R;
 
 public class MainMenu extends AppCompatActivity {
 
     private RelativeLayout snakeLayout;
     private Animation compileAnim;
+    private AdView adView;
     private ImageView classicBtn;
     private ImageView noWallsBtn;
     private ImageView bombBtn;
@@ -44,6 +43,13 @@ public class MainMenu extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        adView = new AdView(this);
+        adView.setAdSize(AdSize.SMART_BANNER);
+        adView.setAdUnitId(GameSettings.MY_AD_UNIT_ID);
+        snakeLayout.addView(adView);
+
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        adView.loadAd(adRequest);
     }
 
 
@@ -295,4 +301,5 @@ public class MainMenu extends AppCompatActivity {
             }
         });
     }
+
 }

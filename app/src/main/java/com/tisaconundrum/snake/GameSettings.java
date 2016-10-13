@@ -1,16 +1,22 @@
-package com.tisaconundrum.snake;
+package com.timbuchalka.snake;
 
 /**
- * Created by tisaconundrum on 10/10/2016.
+ * Created by dev on 16/11/2015.
  */
-
 public final class GameSettings {
-    public static final int FOOD_POINTS = 3; // uppercase with underscores distinguishes from normal variables
+
+    public static final int FOOD_POINTS = 3;
+
     public static final int NUMBER_POINTS = 20;
+
     public static final int POINTS_BOMB_ANIMATION = 15;
+
     public static final int POINTS_ANIMATION = 4;
+
     public static final int POISON_FOOD = 5;
+
     public static final String MY_AD_UNIT_ID = "TBA";
+
     // flash animation for the app
     public static final int ANIMATION_OPEN_BUTTON_DURATION = 400;
     public static final int ANIMATION_CLOSE_BUTTON_DURATION = 400;
