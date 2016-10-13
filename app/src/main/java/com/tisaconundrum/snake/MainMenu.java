@@ -2,8 +2,10 @@ package com.tisaconundrum.snake;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ public class MainMenu extends AppCompatActivity {
     private ImageView classicBtn;
     private ImageView noWallsBtn;
     private ImageView bombBtn;
+    private ImageView settingsBtn;
     private TextView titleLeft;
     private TextView titleMiddle;
     private TextView titleRight;
@@ -217,21 +220,79 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
+    private void initSettings() {
+        settingsBtn = (ImageView) findViewById(R.id.settings);
+        compileAnim = AnimationUtils.loadAnimation(MainMenu.this, R.anim.anim_for_settings_button);
+        compileAnim.setDuration(GameSettings.ANIMATION_OPEN_BUTTON_DURATION);
+        compileAnim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
 
+            }
 
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                settingsBtn.setImageResource(R.mipmap.settings);
+                settingsBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
+                        settingsBtn.setImageResource(R.mipmap.menu_options);
+                        classicBtn.setImageResource(R.mipmap.menu_options);
+                        noWallsBtn.setImageResource(R.mipmap.menu_options);
+                        bombBtn.setImageResource(R.mipmap.menu_options);
 
+                        Animation animation = AnimationUtils.loadAnimation(MainMenu.this, R.anim.reverse_for_classic_button);
+                        animation.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
+                        Animation animation2 = AnimationUtils.loadAnimation(MainMenu.this, R.anim.reverse_for_no_button);
+                        animation2.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
+                        Animation animation3 = AnimationUtils.loadAnimation(MainMenu.this, R.anim.reverse_for_bomb_button);
+                        animation3.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
+                        Animation animation4 = AnimationUtils.loadAnimation(MainMenu.this, R.anim.reverse_for_settings_button);
+                        animation4.setDuration(GameSettings.ANIMATION_CLOSE_BUTTON_DURATION);
 
+                        Animation animationTitleLeft = AnimationUtils.loadAnimation(MainMenu.this, R.anim.anim_for_title_left);
+                        animationTitleLeft.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
+                        Animation animationTitleMiddle = AnimationUtils.loadAnimation(MainMenu.this, R.anim.back_anim_for_title_middle);
+                        animationTitleMiddle.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
+                        Animation animationTitleRight = AnimationUtils.loadAnimation(MainMenu.this, R.anim.back_anim_for_title_right);
+                        animationTitleRight.setDuration(GameSettings.ANIMATION_SHOW_TITLE_DURATION);
 
+                        classicBtn.startAnimation(animation);
+                        noWallsBtn.startAnimation(animation2);
+                        bombBtn.startAnimation(animation3);
+                        settingsBtn.startAnimation(animation4);
+                        titleLeft.startAnimation(animationTitleLeft);
+                        titleMiddle.startAnimation(animationTitleMiddle);
+                        titleRight.startAnimation(animationTitleRight);
 
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent settingsIntent = new Intent(MainMenu.this, Settings.class);
+                                settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                                startActivity(settingsIntent);
+                            }
+                        }, GameSettings.START_NEW_ACTIVITY_DURATION);
 
+                    }
+                });
 
+                settingsBtn.setAnimation(compileAnim);
+            }
 
+            @Override
+            public void onAnimationRepeat(Animation animation) {
 
-
+            }
+        });
+    }
 }
