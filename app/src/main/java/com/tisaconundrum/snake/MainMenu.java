@@ -1,4 +1,4 @@
-package com.timbuchalka.snake;
+package com.tisaconundrum.snake;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -216,3 +216,4 @@ public class MainMenu extends AppCompatActivity {
         titleRight.startAnimation(compileAnim);
 
     }
+}
