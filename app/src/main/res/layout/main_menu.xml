@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/snake_layout"
@@ -9,17 +10,6 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     tools:context="com.tisaconundrum.snake.MainMenu">
-
-    <TextView
-        android:id="@+id/snake_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="72dp"
-        android:layout_toLeftOf="@+id/snake_middle"
-        android:text="@string/title_snake_left"
-        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/snake_middle"
@@ -36,12 +26,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/snake_middle"
-        android:layout_alignBottom="@+id/snake_middle"
-        android:layout_marginLeft="14dp"
+        android:layout_alignBottom="@id/snake_middle"
+        android:layout_marginLeft="18dp"
         android:layout_toRightOf="@id/snake_middle"
         android:text="@string/title_snake_right"
         android:textSize="25sp" />
 
+    <TextView
+        android:id="@+id/snake_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="72dp"
+        android:layout_toLeftOf="@id/snake_middle"
+        android:text="@string/title_snake_left"
+        android:textSize="25sp" />
 
     <ImageView
         android:id="@+id/classic"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/settings"
         android:layout_centerVertical="true"
-        android:src="@mipmap/settings" />
+        android:src="@mipmap/menu_options" />
 
     <ImageView
         android:id="@+id/no_walls"
@@ -58,7 +58,7 @@
         android:layout_above="@+id/gamecenter"
         android:layout_alignLeft="@id/snake_middle"
         android:layout_marginLeft="46dp"
-        android:src="@mipmap/gamecenter" />
+        android:src="@mipmap/menu_options" />
 
     <ImageView
         android:id="@+id/settings"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/classic"
         android:layout_toLeftOf="@id/gamecenter"
-        android:src="@mipmap/classic" />
+        android:src="@mipmap/menu_options" />
 
     <ImageView
         android:id="@+id/gamecenter"
@@ -74,6 +74,6 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/no_walls"
         android:layout_alignTop="@id/settings"
-        android:src="@mipmap/no_walls" />
+        android:src="@mipmap/menu_options" />
 
 </RelativeLayout>
